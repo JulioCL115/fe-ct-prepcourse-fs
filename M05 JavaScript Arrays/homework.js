@@ -112,7 +112,14 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-
+   if (arguments.length === 0) {
+      return 0; // Si no se pasan argumentos, retorna 0.
+   }
+   var a=arguments[0];
+   for (var i = 1; i < arguments.length; i++) {
+      a=a*arguments[i];
+    }
+return a;
 }
 
 function cuentoElementos(array) {
@@ -223,9 +230,12 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
-   var qwe=[];
-   for (var i = 0; i < num.length; i++) {
-      qwe[i]=num[i]+2;
+   var qwe = [];
+   for (var i = 0; i < num; i++) {
+     qwe[i] = num + 2;
+     if (qwe[i] === i) {
+       return "Se interrumpió la ejecución";
+     }
    }
    return qwe;
 }
